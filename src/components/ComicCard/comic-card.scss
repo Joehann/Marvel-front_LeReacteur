@@ -3,16 +3,13 @@
   width: 350px;
   background: rgb(9, 9, 121);
   background: linear-gradient(137deg, rgba(9, 9, 121, 1) 0%, #ee161e 80%);
+
   border: 1px solid #444;
   color: #fff;
   cursor: pointer;
   .card {
     background-color: #111111;
     clip-path: polygon(0 0, 100% 0, 100% 92%, 92% 100%, 0 100%);
-  }
-
-  &:hover {
-    transform: scale(1.05);
   }
 
   .card- {
@@ -28,13 +25,6 @@
       height: 250px;
       width: 100%;
       background-size: cover;
-      // background-position: center;
-      // transition: 0.1s ease-in-out;
-      // transition-delay: 0.3s;
-
-      // &:hover {
-      //   height: 450px;
-      // }
     }
 
     &footer {
