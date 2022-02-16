@@ -1,4 +1,4 @@
-.comic-card {
+.card {
   padding: 5px;
   width: 350px;
   background: rgb(9, 9, 121);
@@ -7,7 +7,7 @@
   border: 1px solid #444;
   color: #fff;
   cursor: pointer;
-  .card {
+  .card-content {
     background-color: #111111;
     clip-path: polygon(0 0, 100% 0, 100% 92%, 92% 100%, 0 100%);
   }

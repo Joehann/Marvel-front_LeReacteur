@@ -1,11 +1,11 @@
 import "./content.scss";
-import ComicCard from "../../ComicCard/ComicCard";
+import Card from "../../Card/Card";
 const Content = ({ data }) => {
   console.log(data);
   return (
     <div className="content">
       {data.results.map((element, index) => {
-        return <ComicCard key={index} data={element} />;
+        return <Card key={index} data={element} />;
       })}
     </div>
   );
