@@ -1,10 +1,23 @@
-import "./App.css";
+import "./App.scss";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import { useState } from "react";
+import Header from "./components/shared/Header/Header";
+import Comic from "./containers/Comics.js";
+import Home from "./containers/Home";
+import Navbar from "./components/shared/Navbar/Navbar";
+import SearchInput from "./components/SearchInput/SearchInput";
 
 function App() {
   return (
-    <div>
-      Hello from <a href="https://www.lereacteur.io">Le Reacteur !</a>
-    </div>
+    <Router>
+      <Header />
+      <Navbar />
+      <SearchInput />
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/comics" element={<Comic />}></Route>
+      </Routes>
+    </Router>
   );
 }
 

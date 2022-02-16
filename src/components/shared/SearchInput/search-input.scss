@@ -1,0 +1,22 @@
+.search-input {
+  position: sticky;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 103px;
+  margin: 15px 0;
+  width: 400px;
+  height: 36px;
+  background: #222;
+  border: none;
+  border-bottom: 1px solid #ee161e;
+  color: #fff;
+  outline: none;
+  font-size: 20px;
+  padding: 0 8px;
+  font-family: "Marvel", sans-serif;
+  z-index: 1000;
+
+  &::placeholder {
+    color: #555;
+  }
+}
