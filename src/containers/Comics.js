@@ -13,10 +13,11 @@ const Comics = ({ search }) => {
       setIsLoading
     );
   }, [search, page]);
+
   return isLoading ? (
     <span>en chargement</span>
   ) : (
-    <Content data={comics} page={page} setPage={setPage} />
+    <Content data={comics} page={page} setPage={setPage} from="comics" />
   );
 };
 

@@ -17,7 +17,7 @@ const Home = ({ search }) => {
   return isLoading ? (
     <span>en chargement</span>
   ) : (
-    <Content data={characters} page={page} setPage={setPage} />
+    <Content data={characters} page={page} setPage={setPage} from="home" />
   );
 };
 
