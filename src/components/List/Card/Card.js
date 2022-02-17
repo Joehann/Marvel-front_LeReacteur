@@ -1,7 +1,9 @@
 import "./card.scss";
-import DefaultImg from "../../assets/img/default_image.png";
+import Favorite from "../../../assets/img/favorite.svg";
+import DefaultImg from "../../../assets/img/default_image.png";
 const Card = ({ data }) => {
   // console.log(data);
+
   const imgPath = data.thumbnail.path + "." + data.thumbnail.extension;
 
   return (
@@ -12,13 +14,19 @@ const Card = ({ data }) => {
         <div
           className="card-body"
           style={
-            data.thumbnail.path
+            !data.thumbnail.path.includes("image_not_available")
               ? { backgroundImage: `url(${imgPath})` }
               : { backgroundImage: `url(${DefaultImg})` }
           }
         ></div>
         <div className="card-footer">{data.description}</div>
       </div>
+      <img
+        className="favorite-svg"
+        src={Favorite}
+        alt="favorite"
+        info="add to favorites"
+      />
     </div>
   );
 };

@@ -3,15 +3,18 @@
   width: 350px;
   background: rgb(9, 9, 121);
   background: linear-gradient(137deg, rgba(9, 9, 121, 1) 0%, #ee161e 80%);
-  // transition: all 0.5s ease-in-out;
-
-  // &:hover {
-  //   background: linear-gradient(95deg, rgb(219, 205, 9) 0%, #eea216 80%);
-  // }
-
   border: 1px solid #444;
   color: #fff;
   cursor: pointer;
+  position: relative;
+
+  .favorite-svg {
+    position: absolute;
+    height: 28px;
+    right: 10px;
+    top: 10px;
+  }
+
   .card-content {
     background-color: #111111;
     clip-path: polygon(0 0, 100% 0, 100% 92%, 92% 100%, 0 100%);

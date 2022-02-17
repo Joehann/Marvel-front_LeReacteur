@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { fetchData } from "../functions/fetchData";
-import Content from "../components/shared/Content/Content";
+import Content from "../components/List/Content/Content";
 
 const Home = ({ search }) => {
   const [characters, setCharacters] = useState({});

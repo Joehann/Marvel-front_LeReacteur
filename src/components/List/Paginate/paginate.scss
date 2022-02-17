@@ -1,0 +1,42 @@
+.paginate {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ee161e;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  box-shadow: 3px 3px 8px #151515;
+  opacity: 0.8;
+
+  button {
+    width: 100px;
+    height: 40px;
+    margin: 0 10px;
+    font-size: 20px;
+    border: none;
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    clip-path: polygon(4% 0, 100% 0%, 96% 100%, 0% 100%);
+
+    &:hover {
+      background: #151515;
+    }
+  }
+  div {
+    padding: 0 20px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // font-family: "Inter", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    // box-sizing: border-box;
+  }
+}
