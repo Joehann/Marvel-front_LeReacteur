@@ -11,8 +11,7 @@ const Character = () => {
 
   useEffect(() => {
     fetchData(
-      `https://marvel-react-backend.herokuapp.com/personnage/comics/${characterId}`,
-      // `http://localhost:4000/character/${characterId}`,
+      `http://localhost:4000/character/${characterId}`,
       setCharacter,
       setIsLoading
     );
