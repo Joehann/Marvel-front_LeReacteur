@@ -11,7 +11,7 @@ const Character = () => {
 
   useEffect(() => {
     fetchData(
-      `http://localhost:4000/character/${characterId}`,
+      `http://localhost:4000/comics/${characterId}`,
       setCharacter,
       setIsLoading
     );

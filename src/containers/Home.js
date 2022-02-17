@@ -23,6 +23,7 @@ const Home = ({ search, setSearch }) => {
       setPage={setPage}
       setSearch={setSearch}
       from="home"
+      search={search}
     />
   );
 };

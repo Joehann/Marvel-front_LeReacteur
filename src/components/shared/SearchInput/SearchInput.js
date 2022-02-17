@@ -1,14 +1,34 @@
 import "./search-input.scss";
-const SearchInput = ({ search, setSearch }) => {
+import Delete from "../../../assets/img/delete.svg";
+import { useState } from "react";
+const SearchInput = ({ setSearch }) => {
+  const [inputValue, setInputValue] = useState("");
+
+  const handleChange = (event) => {
+    setInputValue(event.target.value);
+    event.target.value.length === 0 && setSearch("");
+    event.target.value.length >= 3 && setSearch(event.target.value);
+  };
+
   return (
-    <input
-      className="search-input"
-      type="text"
-      placeholder="Votre recherche..."
-      onChange={(event) =>
-        event.target.value.length >= 3 && setSearch(event.target.value)
-      }
-    />
+    <div className="search-input">
+      <input
+        type="text"
+        placeholder="Votre recherche..."
+        onChange={handleChange}
+        value={inputValue}
+      />
+      {inputValue && (
+        <img
+          src={Delete}
+          alt="delete icon"
+          onClick={() => {
+            setSearch("");
+            setInputValue("");
+          }}
+        />
+      )}
+    </div>
   );
 };
 
