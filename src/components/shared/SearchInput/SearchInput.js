@@ -5,8 +5,9 @@ const SearchInput = ({ search, setSearch }) => {
       className="search-input"
       type="text"
       placeholder="Votre recherche..."
-      value={search}
-      onChange={(event) => setSearch(event.target.value)}
+      onChange={(event) =>
+        event.target.value.length >= 3 && setSearch(event.target.value)
+      }
     />
   );
 };
