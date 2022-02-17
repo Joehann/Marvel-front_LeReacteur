@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchData } from "../functions/fetchData";
-import Content from "../components/Unique/Content/Content";
+import ContentCharacter from "../components/Unique/Content/ContentCharacter";
 const Character = () => {
   const { characterId } = useParams();
   console.log(characterId);
@@ -12,12 +12,17 @@ const Character = () => {
   useEffect(() => {
     fetchData(
       `https://marvel-react-backend.herokuapp.com/personnage/comics/${characterId}`,
+      // `http://localhost:4000/character/${characterId}`,
       setCharacter,
       setIsLoading
     );
   }, [characterId]);
 
-  return isLoading ? <span>en chargement</span> : <Content data={character} />;
+  return isLoading ? (
+    <span>en chargement</span>
+  ) : (
+    <ContentCharacter data={character} />
+  );
 };
 
 export default Character;

@@ -7,10 +7,10 @@
 
   .image {
     min-height: 500px;
-    // width: 500px;
     background-size: cover;
     background-position: center;
     flex: 1;
+    clip-path: polygon(2% 0, 100% 0%, 97% 100%, 0% 100%);
   }
 
   .description {

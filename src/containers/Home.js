@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { fetchData } from "../functions/fetchData";
 import Content from "../components/List/Content/Content";
 
-const Home = ({ search }) => {
+const Home = ({ search, setSearch }) => {
   const [characters, setCharacters] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [page, setPage] = useState(1);
@@ -17,7 +17,13 @@ const Home = ({ search }) => {
   return isLoading ? (
     <span>en chargement</span>
   ) : (
-    <Content data={characters} page={page} setPage={setPage} from="home" />
+    <Content
+      data={characters}
+      page={page}
+      setPage={setPage}
+      setSearch={setSearch}
+      from="home"
+    />
   );
 };
 

@@ -1,4 +1,4 @@
-import "./content.scss";
+import "./content-character.scss";
 import DefaultImg from "../../../assets/img/default_image.png";
 const Content = ({ data }) => {
   console.log(data);

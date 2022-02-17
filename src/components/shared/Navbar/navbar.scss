@@ -6,9 +6,10 @@ nav {
   background: #fff;
   width: 500px;
   padding: 20px 15px;
-  margin: -15px auto 0;
+  margin-top: -15px;
   clip-path: polygon(4% 0, 100% 0%, 96% 100%, 0% 100%);
   z-index: 1000;
+
   ul {
     display: flex;
     justify-content: space-between;
