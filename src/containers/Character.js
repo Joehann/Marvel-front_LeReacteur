@@ -4,14 +4,14 @@ import { fetchData } from "../functions/fetchData";
 import ContentCharacter from "../components/Unique/Content/ContentCharacter";
 const Character = () => {
   const { characterId } = useParams();
-  console.log(characterId);
+  // console.log(characterId);
 
   const [character, setCharacter] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     fetchData(
-      `http://localhost:4000/comics/${characterId}`,
+      `https://marvel-react-app-jp.herokuapp.com/comics/${characterId}`,
       setCharacter,
       setIsLoading
     );

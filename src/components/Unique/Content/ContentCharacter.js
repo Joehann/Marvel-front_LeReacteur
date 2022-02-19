@@ -1,9 +1,8 @@
 import "./content-character.scss";
 import { useState } from "react";
 import DefaultImg from "../../../assets/img/default_image.png";
-import FavoriteBadge from "../../../assets/img/favorite.svg";
 const Content = ({ data }) => {
-  console.log(data);
+  // console.log(data);
   const imgPath = data.thumbnail.path + "." + data.thumbnail.extension;
 
   const [isFavorite, setIsFavorite] = useState(
@@ -15,7 +14,6 @@ const Content = ({ data }) => {
       localStorage.removeItem(`character-${data._id}`);
       setIsFavorite(null);
     } else {
-      console.log("hey");
       localStorage.setItem(`character-${data._id}`, `character-${data._id}`);
       setIsFavorite(`character-${data._id}`);
     }

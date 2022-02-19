@@ -9,7 +9,7 @@ import Navbar from "./components/shared/Navbar/Navbar";
 
 function App() {
   const [search, setSearch] = useState("");
-
+  const [isStarted, setIsStarted] = useState(false);
   return (
     <Router>
       <Header />
@@ -17,7 +17,14 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Home search={search} setSearch={setSearch} />}
+          element={
+            <Home
+              search={search}
+              setSearch={setSearch}
+              setIsStarted={setIsStarted}
+              isStarted={isStarted}
+            />
+          }
         ></Route>
         <Route
           path="/comics"

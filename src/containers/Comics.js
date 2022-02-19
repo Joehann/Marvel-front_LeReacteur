@@ -8,7 +8,7 @@ const Comics = ({ search, setSearch }) => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetchData(
-      `http://localhost:4000/comics?title=${search}&page=${page}`,
+      `https://marvel-react-app-jp.herokuapp.com/comics?title=${search}&page=${page}`,
       setComics,
       setIsLoading
     );
