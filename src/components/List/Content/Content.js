@@ -14,7 +14,9 @@ const Content = ({ data, page, setPage, from, setSearch, search }) => {
           return <Card key={index} data={element} from={from} />;
         })}
       </div>
-      <Paginate page={page} numberOfPages={numberOfPages} setPage={setPage} />
+      {data.count > 100 && (
+        <Paginate page={page} numberOfPages={numberOfPages} setPage={setPage} />
+      )}
     </>
   );
 };

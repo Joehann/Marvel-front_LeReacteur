@@ -43,17 +43,12 @@
       height: 250px;
       width: 100%;
       background-size: cover;
-      // filter: grayscale(0.9) brightness(1.5);
-      // transition: 0.2s ease-in-out;
-
-      // &:hover {
-      //   filter: none;
-      // }
     }
 
     &footer {
       padding: 8px 27px;
       line-height: 19px;
+      letter-spacing: 1px;
       height: 50px;
       overflow-y: hidden;
       text-align: justify;

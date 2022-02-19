@@ -1,8 +1,26 @@
 import "./content-character.scss";
+import { useState } from "react";
 import DefaultImg from "../../../assets/img/default_image.png";
+import FavoriteBadge from "../../../assets/img/favorite.svg";
 const Content = ({ data }) => {
   console.log(data);
   const imgPath = data.thumbnail.path + "." + data.thumbnail.extension;
+
+  const [isFavorite, setIsFavorite] = useState(
+    localStorage.getItem(`character-${data._id}` || null)
+  );
+
+  const toggleFavorite = () => {
+    if (isFavorite) {
+      localStorage.removeItem(`character-${data._id}`);
+      setIsFavorite(null);
+    } else {
+      console.log("hey");
+      localStorage.setItem(`character-${data._id}`, `character-${data._id}`);
+      setIsFavorite(`character-${data._id}`);
+    }
+  };
+
   return (
     <div className="unique-content">
       <div
@@ -14,12 +32,18 @@ const Content = ({ data }) => {
         }
       ></div>
       <div className="description">
-        <h1>{data.name}</h1>
+        <div className="headline">
+          <h1>{data.name}</h1>
+          <button onClick={toggleFavorite}>
+            {isFavorite ? "Remove from favorites" : "Add to favorites"}
+          </button>
+        </div>
         <div className="detail">
           <p>{data.description ? data.description : "No information "}</p>
         </div>
         <div className="comics-list">
           <h2>Is present in :</h2>
+
           <ul className="detail">
             {data.comics.length > 0
               ? data.comics.map((comic, index) => {
