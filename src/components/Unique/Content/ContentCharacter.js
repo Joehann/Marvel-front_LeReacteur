@@ -23,7 +23,7 @@ const Content = ({ data, setFavoritesCharacters, favoritesCharacters }) => {
           <button
             onClick={() =>
               favoritesManager(
-                data._id,
+                data,
                 favoritesCharacters,
                 setFavoritesCharacters
               )

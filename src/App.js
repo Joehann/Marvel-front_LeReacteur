@@ -6,6 +6,7 @@ import Comic from "./containers/Comics.js";
 import Home from "./containers/Home";
 import Character from "./containers/Character";
 import Navbar from "./components/shared/Navbar/Navbar";
+import Favorites from "./containers/Favorites";
 
 function App() {
   const [search, setSearch] = useState("");
@@ -40,6 +41,18 @@ function App() {
             <Character
               setFavoritesCharacters={setFavoritesCharacters}
               favoritesCharacters={favoritesCharacters}
+            />
+          }
+        ></Route>
+        <Route
+          path="favorites"
+          element={
+            <Favorites
+              favoritesCharacters={favoritesCharacters}
+              search={search}
+              setSearch={setSearch}
+              setIsStarted={setIsStarted}
+              isStarted={isStarted}
             />
           }
         ></Route>

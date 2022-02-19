@@ -9,7 +9,10 @@ const Card = ({ data, from }) => {
   const imgPath = data.thumbnail.path + "." + data.thumbnail.extension;
 
   return (
-    <Link to={from === "home" ? `/character/${data._id}` : "#"} data={data}>
+    <Link
+      to={from === "characters" ? `/character/${data._id}` : "#"}
+      data={data}
+    >
       <div className="card">
         <div className="card-content">
           {data.name && <div className="card-header">{data.name}</div>}

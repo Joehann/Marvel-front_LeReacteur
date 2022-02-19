@@ -26,7 +26,7 @@ const Home = ({ search, setSearch, setIsStarted, isStarted }) => {
         page={page}
         setPage={setPage}
         setSearch={setSearch}
-        from="home"
+        from="characters"
         search={search}
       />
     )

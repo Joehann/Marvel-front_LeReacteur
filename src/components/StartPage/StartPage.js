@@ -6,7 +6,7 @@ import { useState } from "react";
 const StartPage = ({ setIsStarted }) => {
   const [displayBtn, setDisplayBtn] = useState(false);
 
-  setTimeout(() => setDisplayBtn(true), 3000);
+  setTimeout(() => setDisplayBtn(true), 2000);
 
   const start = () => {
     setIsStarted(true);
