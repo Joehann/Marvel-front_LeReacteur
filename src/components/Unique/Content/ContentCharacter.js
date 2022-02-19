@@ -1,23 +1,11 @@
 import "./content-character.scss";
-import { useState } from "react";
 import DefaultImg from "../../../assets/img/default_image.png";
-const Content = ({ data }) => {
+import { favoritesManager } from "../../../functions/favoritesManager";
+const Content = ({ data, setFavoritesCharacters, favoritesCharacters }) => {
   // console.log(data);
   const imgPath = data.thumbnail.path + "." + data.thumbnail.extension;
 
-  const [isFavorite, setIsFavorite] = useState(
-    localStorage.getItem(`character-${data._id}` || null)
-  );
-
-  const toggleFavorite = () => {
-    if (isFavorite) {
-      localStorage.removeItem(`character-${data._id}`);
-      setIsFavorite(null);
-    } else {
-      localStorage.setItem(`character-${data._id}`, `character-${data._id}`);
-      setIsFavorite(`character-${data._id}`);
-    }
-  };
+  const isFavorite = favoritesCharacters.includes(data._id);
 
   return (
     <div className="unique-content">
@@ -32,7 +20,15 @@ const Content = ({ data }) => {
       <div className="description">
         <div className="headline">
           <h1>{data.name}</h1>
-          <button onClick={toggleFavorite}>
+          <button
+            onClick={() =>
+              favoritesManager(
+                data._id,
+                favoritesCharacters,
+                setFavoritesCharacters
+              )
+            }
+          >
             {isFavorite ? "Remove from favorites" : "Add to favorites"}
           </button>
         </div>

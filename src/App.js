@@ -10,6 +10,10 @@ import Navbar from "./components/shared/Navbar/Navbar";
 function App() {
   const [search, setSearch] = useState("");
   const [isStarted, setIsStarted] = useState(false);
+  const [favoritesCharacters, setFavoritesCharacters] = useState(
+    JSON.parse(localStorage.getItem("favoritesCharacters")) || []
+  );
+
   return (
     <Router>
       <Header />
@@ -30,7 +34,15 @@ function App() {
           path="/comics"
           element={<Comic search={search} setSearch={setSearch} />}
         ></Route>
-        <Route path="/character/:characterId" element={<Character />}></Route>
+        <Route
+          path="/character/:characterId"
+          element={
+            <Character
+              setFavoritesCharacters={setFavoritesCharacters}
+              favoritesCharacters={favoritesCharacters}
+            />
+          }
+        ></Route>
       </Routes>
     </Router>
   );

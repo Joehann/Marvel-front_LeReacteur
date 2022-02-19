@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { fetchData } from "../functions/fetchData";
 import ContentCharacter from "../components/Unique/Content/ContentCharacter";
-const Character = () => {
+const Character = ({ setFavoritesCharacters, favoritesCharacters }) => {
   const { characterId } = useParams();
   // console.log(characterId);
 
@@ -20,7 +20,11 @@ const Character = () => {
   return isLoading ? (
     <span>en chargement</span>
   ) : (
-    <ContentCharacter data={character} />
+    <ContentCharacter
+      data={character}
+      setFavoritesCharacters={setFavoritesCharacters}
+      favoritesCharacters={favoritesCharacters}
+    />
   );
 };
 
