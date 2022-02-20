@@ -14,11 +14,15 @@ function App() {
   const [favoritesCharacters, setFavoritesCharacters] = useState(
     JSON.parse(localStorage.getItem("favoritesCharacters")) || []
   );
+  const [isActiveInNav, setIsActiveInNav] = useState("characters");
 
   return (
     <Router>
       <Header />
-      <Navbar />
+      <Navbar
+        isActiveInNav={isActiveInNav}
+        setIsActiveInNav={setIsActiveInNav}
+      />
       <Routes>
         <Route
           path="/"

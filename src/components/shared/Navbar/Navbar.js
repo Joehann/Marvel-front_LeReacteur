@@ -1,18 +1,27 @@
 import "./navbar.scss";
 import { Link } from "react-router-dom";
-const Navbar = () => {
+const Navbar = ({ isActiveInNav, setIsActiveInNav }) => {
   return (
     <nav>
       <ul>
-        <li>
+        <li
+          className={isActiveInNav === "characters" ? "active" : ""}
+          onClick={() => setIsActiveInNav("characters")}
+        >
           <Link to="/">Personnages</Link>
         </li>
 
-        <li>
+        <li
+          className={isActiveInNav === "comics" ? "active" : ""}
+          onClick={() => setIsActiveInNav("comics")}
+        >
           <Link to="/comics">Comics</Link>
         </li>
 
-        <li>
+        <li
+          className={isActiveInNav === "favorites" ? "active" : ""}
+          onClick={() => setIsActiveInNav("favorites")}
+        >
           <Link to="/favorites">Favoris</Link>
         </li>
       </ul>
