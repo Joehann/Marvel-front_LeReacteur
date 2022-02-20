@@ -66,7 +66,8 @@ nav {
 
 @media screen and (width < 500px) {
   nav {
-    transform: translate(-50%) scale(60%);
+    transform: translate(-50%) scale(50%);
+    // max-width: 300px;
     top: 0;
   }
 }
