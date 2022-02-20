@@ -2,11 +2,15 @@ import "./start-page.scss";
 import ImageDepthMap from "react-depth-map";
 import Groot from "../../assets/pixiEffect/groot.jpg";
 import GrootDepthMap from "../../assets/pixiEffect/groot-depthmap.jpg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 const StartPage = ({ setIsStarted }) => {
   const [displayBtn, setDisplayBtn] = useState(false);
-
-  setTimeout(() => setDisplayBtn(true), 2000);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDisplayBtn(true);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
 
   const start = () => {
     setIsStarted(true);
