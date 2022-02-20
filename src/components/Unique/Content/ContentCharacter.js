@@ -12,7 +12,7 @@ const Content = ({ data, setFavoritesCharacters, favoritesCharacters }) => {
     "_id",
     data._id
   );
-  console.log(isFavoriteId);
+  // console.log(isFavoriteId);
 
   return (
     <div className="unique-content">
