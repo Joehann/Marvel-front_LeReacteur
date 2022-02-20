@@ -15,7 +15,9 @@ const Content = ({
   data.count % 100 > 0 && numberOfPages++;
   return (
     <>
-      <SearchInput setSearch={setSearch} search={search} data={data} />
+      {!favorites && (
+        <SearchInput setSearch={setSearch} search={search} data={data} />
+      )}
 
       <div className="content">
         {data.results.map((element, index) => {
