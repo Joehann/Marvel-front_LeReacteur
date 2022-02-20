@@ -26,3 +26,24 @@
     clip-path: polygon(0 0, 100% 0%, 100% 100%, 25% 100%);
   }
 }
+
+@media screen and (width < 1186px) {
+  .header {
+    height: 300px;
+    display: block;
+
+    .left img {
+      display: none;
+    }
+    .right-img {
+      clip-path: none;
+    }
+  }
+}
+
+@media screen and (width < 774px) {
+  .header {
+    height: 180px;
+    display: block;
+  }
+}

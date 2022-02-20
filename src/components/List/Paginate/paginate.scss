@@ -39,3 +39,9 @@
     border-right: 1px solid #fff;
   }
 }
+
+@media screen and (width < 774px) {
+  .paginate {
+    transform: translateX(-50%) scale(85%);
+  }
+}

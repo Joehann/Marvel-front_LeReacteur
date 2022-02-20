@@ -8,7 +8,7 @@ nav {
   padding: 20px 15px;
   margin-top: -15px;
   clip-path: polygon(4% 0, 100% 0%, 96% 100%, 0% 100%);
-  z-index: 1000;
+  z-index: 2000;
 
   ul {
     display: flex;
@@ -48,6 +48,18 @@ nav {
       }
     }
   }
-  .search {
+}
+
+@media screen and (width < 1180px) {
+  nav {
+    transform: translate(-50%) scale(80%);
+    position: fixed;
+    top: 90px;
+  }
+}
+
+@media screen and (width < 774px) {
+  nav {
+    top: 60px;
   }
 }

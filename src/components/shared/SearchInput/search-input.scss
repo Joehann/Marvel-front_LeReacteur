@@ -38,3 +38,18 @@
     cursor: pointer;
   }
 }
+
+@media screen and (width < 1180px) {
+  .search-input {
+    position: fixed;
+    top: 140px;
+    box-shadow: 2px 2px 15px #222;
+  }
+}
+
+@media screen and (width < 774px) {
+  .search-input {
+    width: 300px;
+    top: 100px;
+  }
+}
