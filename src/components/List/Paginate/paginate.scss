@@ -43,5 +43,14 @@
 @media screen and (width < 774px) {
   .paginate {
     transform: translateX(-50%) scale(85%);
+
+    button {
+      font-size: 17px;
+      width: 60px;
+    }
+
+    div {
+      font-size: 17px;
+    }
   }
 }
