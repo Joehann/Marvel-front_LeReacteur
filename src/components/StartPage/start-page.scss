@@ -36,4 +36,18 @@
       opacity: 0.8;
     }
   }
+
+  .on-load {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #151515;
+    width: 100vw;
+    height: 100vh;
+
+    h1 {
+      font-size: 30px;
+      color: #fff;
+    }
+  }
 }

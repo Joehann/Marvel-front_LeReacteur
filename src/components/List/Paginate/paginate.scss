@@ -52,5 +52,17 @@
     div {
       font-size: 17px;
     }
+
+    .pages {
+      display: none;
+    }
+  }
+}
+
+@media screen and (width < 500px) {
+  nav {
+    .paginate {
+      transform: translateX(-50%) scale(70%);
+    }
   }
 }

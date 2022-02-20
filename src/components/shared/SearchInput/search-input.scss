@@ -53,3 +53,10 @@
     top: 100px;
   }
 }
+
+@media screen and (width < 500px) {
+  .search-input {
+    transform: translate(-50%) scale(80%);
+    top: 24px;
+  }
+}

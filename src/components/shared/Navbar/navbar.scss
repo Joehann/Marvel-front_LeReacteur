@@ -63,3 +63,10 @@ nav {
     top: 60px;
   }
 }
+
+@media screen and (width < 500px) {
+  nav {
+    transform: translate(-50%) scale(60%);
+    top: 0;
+  }
+}

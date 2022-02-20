@@ -4,19 +4,23 @@ import Groot from "../../assets/pixiEffect/groot.jpg";
 import GrootDepthMap from "../../assets/pixiEffect/groot-depthmap.jpg";
 import { useState, useEffect } from "react";
 const StartPage = ({ setIsStarted }) => {
+  const [pageIsLoaded, setPageIsLoaded] = useState(false);
   const [displayBtn, setDisplayBtn] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setDisplayBtn(true);
-    }, 1500);
-    return () => clearTimeout(timer);
+    window.onload = () => {
+      setPageIsLoaded(true);
+      const timer = setTimeout(() => {
+        setDisplayBtn(true);
+      }, 1500);
+      return () => clearTimeout(timer);
+    };
   }, []);
 
   const start = () => {
     setIsStarted(true);
   };
 
-  return (
+  return pageIsLoaded ? (
     <div className="starter">
       <ImageDepthMap
         originalImg={Groot}
@@ -30,6 +34,10 @@ const StartPage = ({ setIsStarted }) => {
           Start
         </button>
       )}
+    </div>
+  ) : (
+    <div className="on-load">
+      <h1>...is loading</h1>
     </div>
   );
 };

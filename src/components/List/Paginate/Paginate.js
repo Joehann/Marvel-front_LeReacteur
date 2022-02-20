@@ -9,7 +9,7 @@ const Paginate = ({ page, setPage, numberOfPages }) => {
         Prev.
       </button>
       <div>
-        {page} / {numberOfPages}
+        {page} <span className="pages">/ {numberOfPages}</span>
       </div>
       <button
         disabled={page >= numberOfPages ? true : false}
