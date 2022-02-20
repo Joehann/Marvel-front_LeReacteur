@@ -1,11 +1,18 @@
 import "./content-character.scss";
 import DefaultImg from "../../../assets/img/default_image.png";
 import { favoritesManager } from "../../../functions/favoritesManager";
+import { searchInputInArrayOfObjects } from "../../../functions/searchInArrayOfObjects";
+
 const Content = ({ data, setFavoritesCharacters, favoritesCharacters }) => {
-  // console.log(data);
+  // console.log(data._id);
   const imgPath = data.thumbnail.path + "." + data.thumbnail.extension;
 
-  const isFavorite = favoritesCharacters.includes(data._id);
+  const isFavoriteId = searchInputInArrayOfObjects(
+    favoritesCharacters,
+    "_id",
+    data._id
+  );
+  console.log(isFavoriteId);
 
   return (
     <div className="unique-content">
@@ -25,11 +32,12 @@ const Content = ({ data, setFavoritesCharacters, favoritesCharacters }) => {
               favoritesManager(
                 data,
                 favoritesCharacters,
-                setFavoritesCharacters
+                setFavoritesCharacters,
+                isFavoriteId
               )
             }
           >
-            {isFavorite ? "Remove from favorites" : "Add to favorites"}
+            {isFavoriteId >= 0 ? "Remove from favorites" : "Add to favorites"}
           </button>
         </div>
         <div className="detail">
