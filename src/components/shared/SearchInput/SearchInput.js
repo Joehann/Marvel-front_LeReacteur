@@ -6,7 +6,10 @@ const SearchInput = ({ setSearch }) => {
 
   const handleChange = (event) => {
     setInputValue(event.target.value);
-    event.target.value.length === 0 && setSearch("");
+
+    event.target.value.length >= 0 &&
+      event.target.value.length < 3 &&
+      setSearch("");
     event.target.value.length >= 3 && setSearch(event.target.value);
   };
 
